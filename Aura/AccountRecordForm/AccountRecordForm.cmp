@@ -1,0 +1,101 @@
+<aura:component controller="CreateAccount"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    
+    <aura:attribute name="objAccount" type="Account" Default="{'sobjectType' : 'Account'}" />
+    
+    <lightning:card title="Create New Records" iconName="standard:account">
+        <h3 class="slds-section-title--divider">Create Account</h3>
+        
+        <div class="slds-grid full forcePageBlockSectionRow">
+            <div class="slds-has-flexi-truncate slds-p-horizontal_medium full forcePageBlockItem forcePageBlockItemEdit" role="listitem" style="">
+                <div class="slds-form-element slds-form-element_edit slds-hint-parent slds-p-vertical_xx-small">
+                    <label>Account Name</label>
+                    <div class="slds-form-element__control">  
+                        <div class="slds-form-element__control ltng-label-hide">
+                            <lightning:input aura:id="todoForm" type="text" placeholder="Enter Account Name" 
+                                             value="{!v.objAccount.Name}"/>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="slds-has-flexi-truncate slds-p-horizontal_medium full forcePageBlockItem forcePageBlockItemEdit" role="listitem" style="">
+                <div class="slds-form-element slds-form-element_edit slds-hint-parent slds-p-vertical_xx-small">
+                    <div class="slds-form-element__control">
+                        <label >
+                            <span class="">Phone</span>
+                            <span class="required ">*</span>
+                        </label>
+                        <div class="slds-form-element__control ltng-label-hide">
+                            <lightning:input aura:id="todoForm" type="text" placeholder="Enter Phone" 
+                                             value="{!v.objAccount.Phone}" />
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+        <div class="slds-grid full forcePageBlockSectionRow">
+            <div class="slds-has-flexi-truncate slds-p-horizontal_medium full forcePageBlockItem forcePageBlockItemEdit" role="listitem" style="">
+                <div class="slds-form-element slds-form-element_edit slds-hint-parent slds-p-vertical_xx-small">
+                    <label>Sic</label>
+                    <div class="slds-form-element__control">  
+                        <div class="slds-form-element__control ltng-label-hide">
+                            <lightning:input type="text" placeholder="Enter Sic" 
+                                             value="{!v.objAccount.Sic}"/>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="slds-has-flexi-truncate slds-p-horizontal_medium full forcePageBlockItem forcePageBlockItemEdit" role="listitem" style="">
+                <div class="slds-form-element slds-form-element_edit slds-hint-parent slds-p-vertical_xx-small">
+                    <div class="slds-form-element__control">
+                        <label >
+                            <span class="">Site</span>
+                            <span class="required ">*</span>
+                        </label>
+                        <div class="slds-form-element__control ltng-label-hide">
+                            <lightning:input type="text" placeholder="Enter Site" 
+                                             value="{!v.objAccount.Site}"/>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+        <div class="slds-grid full forcePageBlockSectionRow">
+            <div class="slds-has-flexi-truncate slds-p-horizontal_medium full forcePageBlockItem forcePageBlockItemEdit" role="listitem" style="">
+                <div class="slds-form-element slds-form-element_edit slds-hint-parent slds-p-vertical_xx-small">
+                    <label>Account Number</label>
+                    <div class="slds-form-element__control">  
+                        <div class="slds-form-element__control ltng-label-hide">
+                            <lightning:input aura:id="todoForm" type="Number" placeholder="Enter AccountNumber" 
+                                             value="{!v.objAccount.AccountNumber}" />
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="slds-has-flexi-truncate slds-p-horizontal_medium full forcePageBlockItem forcePageBlockItemEdit" role="listitem" style="">
+                <div class="slds-form-element slds-form-element_edit slds-hint-parent slds-p-vertical_xx-small">
+                    <div class="slds-form-element__control">
+                        <label >
+                            <span class="">Annual Revenue</span>
+                            <span class="required ">*</span>
+                        </label>
+                        <div class="slds-form-element__control ltng-label-hide">
+                            <lightning:input aura:id="todoForm" type="Number" formatter="currency" placeholder="Enter AnnualRevenue" 
+                                             value="{!v.objAccount.AnnualRevenue}" />
+                        </div>
+                    </div> 
+                </div>
+            </div>  
+        </div>
+        <br/> <br/>
+        <div class="slds-align_absolute-center" style="height:5rem">
+            <lightning:button variant="brand" label="Create Account" title="Create Account" onclick="{!c.handleAccountSave }" />
+        </div>
+        
+    </lightning:card>
+    
+    
+</aura:component>
